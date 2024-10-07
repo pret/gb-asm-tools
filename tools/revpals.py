@@ -5,6 +5,9 @@
 Usage: python3 revpals.py path/to/gfx/
 
 List Pokemon and trainer sprites with reversed palettes (darker color first).
+
+Copyright (c) 2024, Rangi42
+SPDX-License-Identifier: MIT
 """
 
 import sys

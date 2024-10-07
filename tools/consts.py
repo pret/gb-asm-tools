@@ -5,6 +5,9 @@
 Usage: python3 consts.py constants/some_constants.asm
 
 View numeric values of `const`ants.
+
+Copyright (c) 2024, Rangi42
+SPDX-License-Identifier: MIT
 """
 
 import sys

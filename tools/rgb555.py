@@ -5,6 +5,9 @@
 Usage: python3 rgb555.py image.png
 
 Round all colors of the input image to RGB555.
+
+Copyright (c) 2024, Rangi42
+SPDX-License-Identifier: MIT
 """
 
 import sys

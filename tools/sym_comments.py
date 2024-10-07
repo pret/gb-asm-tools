@@ -5,6 +5,9 @@
 Usage: python3 sym_comments.py file.asm project.sym > file_commented.asm
 
 Comments each label in file.asm with its bank:address from the sym file.
+
+Copyright (c) 2024, Rangi42
+SPDX-License-Identifier: MIT
 """
 
 import sys

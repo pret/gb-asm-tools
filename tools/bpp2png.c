@@ -1,3 +1,6 @@
+// Copyright (c) 2024, Rangi42
+// SPDX-License-Identifier: MIT
+
 #define PROGRAM_NAME "bpp2png"
 #define USAGE_OPTS "[-h|--help] [-w width] [-d depth] [-p in.gbcpal] [-t] in.2bpp|in.1bpp out.png"
 

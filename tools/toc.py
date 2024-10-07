@@ -7,6 +7,9 @@ Usage: python toc.py file.md
 Replace a "## TOC" heading in a Markdown file with a table of contents,
 generated from the other headings in the file. Supports multiple files.
 Headings must start with "##" signs to be detected.
+
+Copyright (c) 2024, Rangi42
+SPDX-License-Identifier: MIT
 """
 
 import sys

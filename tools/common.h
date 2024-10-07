@@ -1,3 +1,6 @@
+// Copyright (c) 2024, Rangi42
+// SPDX-License-Identifier: MIT
+
 #ifndef GUARD_COMMON_H
 #define GUARD_COMMON_H
 

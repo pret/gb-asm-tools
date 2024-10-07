@@ -5,6 +5,9 @@
 Usage: python3 dupeframes.py path/to/gfx/pokemon/
 
 Check for duplicate frames in Pokemon sprites (path/to/gfx/pokemon/*/front.png).
+
+Copyright (c) 2024, Rangi42
+SPDX-License-Identifier: MIT
 """
 
 import sys
