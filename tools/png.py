@@ -170,7 +170,7 @@ the PNG image comes from something that uses a similar format
 (for example, 1-bit BMPs, or another PNG file).
 """
 
-__version__ = "0.0.21"
+__version__ = "0.20220715.0"
 
 import collections
 import io   # For io.BytesIO
@@ -280,7 +280,7 @@ def check_sizes(size, width, height):
 
     if len(size) != 2:
         raise ProtocolError(
-            "size argument should be a pair (width, height)")
+            "size argument should be a pair (width, height) instead is %r" % (size,))
     if width is not None and width != size[0]:
         raise ProtocolError(
             "size[0] (%r) and width (%r) should match when both are used."
@@ -762,7 +762,16 @@ class Writer:
 
     def write_preamble(self, outfile):
         # http://www.w3.org/TR/PNG/#5PNG-file-signature
-        outfile.write(signature)
+
+        # This is the first write that is made when
+        # writing a PNG file.
+        # This one, and only this one, is checked for TypeError,
+        # which generally indicates that we are writing bytes
+        # into a text stream.
+        try:
+            outfile.write(signature)
+        except TypeError as e:
+            raise ProtocolError("PNG must be written to a binary stream") from e
 
         # http://www.w3.org/TR/PNG/#11IHDR
         write_chunk(outfile, b'IHDR',
@@ -1289,6 +1298,13 @@ class Image:
 
         with open(file, 'wb') as fd:
             w.write(fd, self.rows)
+
+    def stream(self):
+        """Stream the rows into a list, so that the rows object
+        can be accessed multiple times, or randomly.
+        """
+
+        self.rows = list(self.rows)
 
     def write(self, file):
         """Write the image to the open file object.
