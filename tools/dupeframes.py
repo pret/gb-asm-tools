@@ -27,8 +27,8 @@ def main():
 	if len(sys.argv) != 2:
 		print(f'Usage: {sys.argv[0]} path/to/gfx/pokemon/', file=sys.stderr)
 		sys.exit(1)
-	for filename in sorted(glob.glob(f'{sys.argv[1]}/**/*.png')):
-		name = filename.removeprefix(sys.argv[1] + '/')
+	for filename in sorted(glob.glob(f'{sys.argv[1]}/**/*.png', recursive=True)):
+		name = filename.removeprefix(sys.argv[1]).removeprefix('/')
 		for (i, j) in duplicate_frames(filename):
 			print(f'{name}: frame {j} is a duplicate of frame {i}', file=sys.stderr)
 
