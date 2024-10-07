@@ -1,0 +1,15 @@
+# Auto detect text files and perform LF normalization
+* text eol=lf
+
+# Explicitly declare text files you want to always be normalized and converted
+# to native line endings on checkout.
+
+# Files that are part of the tools
+*.awk text
+*.c text
+*.h text
+*.py text
+*.sh text
+
+# Extra files
+*.md text

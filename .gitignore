@@ -1,0 +1,21 @@
+# compiled objects
+*.o
+
+# tool binaries
+*.exe
+
+# precompiled python
+__pycache__/
+*.pyc
+*$py.class
+
+# vim configuration
+# http://www.vim.org/scripts/script.php?script_id=441
+.lvimrc
+
+# swap files for vim and gedit
+.*.swp
+*~
+
+# macos files
+.DS_STORE
