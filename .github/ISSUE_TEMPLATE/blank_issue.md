@@ -1,4 +1,4 @@
 ---
-name: Update to pokemon-asm-tools
-about: Suggest a possible change to pokemon-asm-tools itself.
+name: Update to gb-asm-tools
+about: Suggest a possible change to gb-asm-tools itself.
 ---
