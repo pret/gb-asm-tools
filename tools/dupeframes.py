@@ -2,16 +2,15 @@
 # -*- coding: utf-8 -*-
 
 """
-Usage: python3 dupeframes.py path/to/gfx/pokemon/
+Usage: python3 dupeframes.py image.png...
 
-Check for duplicate frames in Pokemon sprites (path/to/gfx/pokemon/*/front.png).
+Check for duplicate frames in Pokemon sprites (vertical strips of square frames).
 
 Copyright (c) 2024, Rangi42
 SPDX-License-Identifier: MIT
 """
 
 import sys
-import glob
 
 import png
 
@@ -27,13 +26,15 @@ def duplicate_frames(filename):
 	yield from ((i, j) for i in range(num_frames) for j in range(i+1, num_frames) if frames[i] == frames[j])
 
 def main():
-	if len(sys.argv) != 2:
-		print(f'Usage: {sys.argv[0]} path/to/gfx/pokemon/', file=sys.stderr)
+	if len(sys.argv) < 2:
+		print(f'Usage: {sys.argv[0]} image.png...', file=sys.stderr)
 		sys.exit(1)
-	for filename in sorted(glob.glob(f'{sys.argv[1]}/**/*.png', recursive=True)):
-		name = filename.removeprefix(sys.argv[1]).removeprefix('/')
-		for (i, j) in duplicate_frames(filename):
-			print(f'{name}: frame {j} is a duplicate of frame {i}', file=sys.stderr)
+	for filename in sys.argv[1:]:
+		if not filename.lower().endswith('.png'):
+			print(f'{filename} is not a .png file!', file=sys.stderr)
+		else:
+			for (i, j) in duplicate_frames(filename):
+				print(f'{filename}: frame {j} is a duplicate of frame {i}', file=sys.stderr)
 
 if __name__ == '__main__':
 	main()
