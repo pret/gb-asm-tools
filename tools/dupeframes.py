@@ -34,7 +34,7 @@ def main():
 			print(f'{filename} is not a .png file!', file=sys.stderr)
 		else:
 			for (i, j) in duplicate_frames(filename):
-				print(f'{filename}: frame {j} is a duplicate of frame {i}', file=sys.stderr)
+				print(f'{filename}: frame {j} is a duplicate of frame {i}')
 
 if __name__ == '__main__':
 	main()

@@ -104,6 +104,8 @@ def main():
 			print(f'{filename} is not a .png file!', file=sys.stderr)
 		elif not erase_duplicates(filename, flip, cross):
 			print(f'{filename} is not divisible into 8x8 tiles!', file=sys.stderr)
+		else:
+			print(f'{filename} was uniquified')
 
 if __name__ == '__main__':
 	main()

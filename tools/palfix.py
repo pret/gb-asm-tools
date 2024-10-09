@@ -74,6 +74,8 @@ def main():
 			print(f'{filename} is not a .png file!', file=sys.stderr)
 		elif not fix_pal(filename):
 			print(f'{filename} has too many colors!', file=sys.stderr)
+		else:
+			print(f'{filename} was fixed')
 
 if __name__ == '__main__':
 	main()

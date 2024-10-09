@@ -96,7 +96,7 @@ def main():
 		elif result is False:
 			print('Warning: No content headings found', file=sys.stderr)
 		else:
-			print('OK')
+			print(f'Added TOC to {filename}')
 
 if __name__ == '__main__':
 	main()

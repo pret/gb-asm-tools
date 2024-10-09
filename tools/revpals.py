@@ -41,7 +41,7 @@ def main():
 		sys.exit(1)
 	for filename in sys.argv[1:]:
 		if (r := reversed_colors(filename)):
-			print(f'{filename} indexes {format_color(r[0])} before {format_color(r[1])}', file=sys.stderr)
+			print(f'{filename} indexes {format_color(r[0])} before {format_color(r[1])}')
 
 if __name__ == '__main__':
 	main()

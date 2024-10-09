@@ -36,6 +36,7 @@ def main():
 		if not filename.lower().endswith('.png'):
 			print(f'{filename} is not a .png file!', file=sys.stderr)
 		round_pal(filename)
+		print(f'{filename} was rounded')
 
 if __name__ == '__main__':
 	main()
