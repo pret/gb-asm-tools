@@ -30,7 +30,7 @@ def invert(c):
 
 def luminance(c):
 	r, g, b = c
-	return 0.299 * r**2 + 0.587 * g**2 + 0.114 * b**2
+	return 0.299 * r + 0.587 * g + 0.114 * b
 
 def rgb5_pixels(row):
 	yield from (rgb8_to_rgb5(row[x:x+3]) for x in range(0, len(row), 4))
